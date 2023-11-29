@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 import { IAuth } from "../auth/auth.types";
-import { IProduct } from "../hero/HeroContextProvider";
+import { IProduct } from "../hero/hero.types";
 import { ICartState, ICartValues } from "./types.cart";
 import { notify } from "../../components/Toastify";
 

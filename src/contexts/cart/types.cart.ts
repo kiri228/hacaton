@@ -1,4 +1,4 @@
-import { IProduct } from "../products/products.types";
+import { IProduct } from "../hero/hero.types";
 
 export interface ICartProduct extends IProduct {
   count: number;
