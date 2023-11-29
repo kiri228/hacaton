@@ -65,7 +65,7 @@ const HeroList = () => {
     <Box
       sx={{
         marginTop: "20px",
-        width: "90%",
+        width: "100%",
         display: "flex",
         justifyContent: "center",
         gap: "20px",
@@ -73,36 +73,47 @@ const HeroList = () => {
     >
       {products.length > 0 ? (
         products.map((card) => (
-          <Card key={card.id} sx={{ maxWidth: 345, width: "30%" }}>
-            <CardHeader
-              avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                  R
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title="Shrimp and Chorizo Paella"
-              subheader="September 14, 2016"
-            />
+          <Card key={card.id} sx={{ maxWidth: 340, width: "30%" }}>
+            <Typography
+              sx={{
+                margin: "10px",
+                textAlign: "center",
+                textTransform: "uppercase",
+                fontFamily: "Reaver, serif",
+                fontWeight: "700",
+              }}
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
+              {card.title}
+            </Typography>
             <CardMedia
               component="img"
-              sx={{ height: 140 }}
+              sx={{ height: 300 }}
               image={card.image}
               title="green iguana"
               alt="Paella dish"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {card.title}
+              <Typography
+                sx={{
+                  fontFamily: "Georgia, serif",
+                }}
+                gutterBottom
+                variant="h6"
+                component="div"
+              >
+                Price: {card.price}
               </Typography>
-              <Typography gutterBottom variant="h6" component="div">
-                Price: {card.price} $
-              </Typography>
-              <Typography gutterBottom variant="h6" component="div">
+              <Typography
+                sx={{
+                  fontFamily: "Georgia, serif",
+                }}
+                gutterBottom
+                variant="h6"
+                component="div"
+              >
                 Category: {card.category}
               </Typography>
               <Typography variant="body2" color="text.secondary">
@@ -110,11 +121,7 @@ const HeroList = () => {
               </Typography>
             </CardContent>
             <CardContent>
-              <Typography variant="body2" color="text.secondary">
-                This impressive paella is a perfect party dish and a fun meal to
-                cook together with your guests. Add 1 cup of frozen peas along
-                with the mussels, if you like.
-              </Typography>
+              <Typography variant="body2" color="text.secondary"></Typography>
             </CardContent>
             <CardActions disableSpacing>
               <IconButton aria-label="add to favorites">
