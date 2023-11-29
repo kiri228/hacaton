@@ -7,6 +7,14 @@
       "category": "pets",
       "description": "cute",
       "id": 1
+    },
+    {
+      "title": "choso",
+      "price": "1000000000000000000",
+      "image": "https://i.pinimg.com/564x/a1/19/e9/a119e9fed8eb8f5a485b290fba09587d.jpg",
+      "category": "gum",
+      "description": "coooool very cooool",
+      "id": 2
     }
   ]
 }
