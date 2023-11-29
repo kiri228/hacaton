@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 import { LIMIT, categories } from "../utils/consts";
 import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../contexts/hero/HeroContextProvider";
+
 const Filter = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [category, setCategory] = useState(
