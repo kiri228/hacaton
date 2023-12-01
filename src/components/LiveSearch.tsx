@@ -36,14 +36,24 @@ const Livesearch = () => {
   }, [searchVal]);
   return (
     <ThemeProvider theme={searchTheme}>
-      <div style={{ border: "2px solid white" }}>
+      <div
+        style={{
+          border: "2px solid rgba(255, 255, 255, 0.5)",
+          borderRadius: "8px",
+        }}
+      >
         <TextField
           InputProps={{
-            startAdornment: <SearchIcon sx={{ color: "white" }} />,
+            startAdornment: (
+              <SearchIcon sx={{ color: "white", marginLeft: "10px" }} />
+            ),
           }}
           onChange={(e) => setSearchVal(e.target.value)}
           placeholder="Search..."
-          sx={{ color: "white" }}
+          sx={{
+            border: "2px solid rgba(255, 255, 255, 0.5)",
+            borderRadius: "5px",
+          }}
           id="outlined-basic"
           variant="outlined"
         />

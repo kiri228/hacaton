@@ -69,6 +69,7 @@ const AddPage = () => {
         border: "2px solid #1976D2",
         borderRadius: "15px",
         gap: "5px",
+        fontFamily: "monospace",
         padding: "20px",
       }}
       noValidate
@@ -121,8 +122,20 @@ const AddPage = () => {
         variant="standard"
         name="image"
       />
-      <Button type="submit" variant="contained">
-        Add
+      <Button
+        sx={{
+          mr: 2,
+          display: { xs: "none", md: "flex" },
+          fontFamily: "monospace",
+          fontWeight: 700,
+          letterSpacing: ".3rem",
+          color: "inherit",
+          textDecoration: "none",
+        }}
+        type="submit"
+        variant="contained"
+      >
+        ADD
       </Button>
     </Box>
   );
