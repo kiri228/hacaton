@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+// import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/auth/AuthContextsProvider";
 import LiveSearch from "./LiveSearch";
@@ -77,8 +77,9 @@ function Navbar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
+          <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_horiz.png" />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+          {/* <Typography
             variant="h6"
             noWrap
             component="a"
@@ -87,14 +88,15 @@ function Navbar() {
               mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
-              fontWeight: 700,
+              fontWeight: 300,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              fontSize: "40px",
             }}
           >
-            LOGO
-          </Typography>
+            DOTA 2
+          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -133,7 +135,7 @@ function Navbar() {
             </Menu>
           </Box>
 
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -150,7 +152,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            DOTA 2
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {getPages().map((page) => (
@@ -158,7 +160,14 @@ function Navbar() {
                 <Button
                   key={page.id}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    m: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "monospace",
+                    fontSize: "30px",
+                    marginLeft: "100px",
+                  }}
                 >
                   {page.title}
                 </Button>
@@ -168,7 +177,12 @@ function Navbar() {
 
           {user && (
             <Link to="/cart">
-              <LocalMallIcon sx={{ marginRight: "30px", color: "white" }} />
+              <LocalMallIcon
+                sx={{
+                  marginRight: "30px",
+                  color: "white",
+                }}
+              />
             </Link>
           )}
 
@@ -179,7 +193,7 @@ function Navbar() {
               user ? user.displayName : "No user"
             }`}</span>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 3 }}>
                 <Avatar
                   alt="Remy Sharp"
                   src={`${
@@ -189,7 +203,7 @@ function Navbar() {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: "45px" }}
+              sx={{ m: "40px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
