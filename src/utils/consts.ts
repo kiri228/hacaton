@@ -9,19 +9,24 @@ export const categories = [
     id: "1",
   },
   {
-    title: "Pets",
-    value: "pets",
+    title: "Tank",
+    value: "tank",
     id: "2",
   },
   {
-    title: "Tech",
-    value: "tech",
+    title: "Marksman",
+    value: "marksman",
     id: "3",
   },
   {
-    title: "Gum",
-    value: "gum",
+    title: " Assassin",
+    value: " assassin",
     id: "4",
+  },
+  {
+    title: " Mage",
+    value: " mage",
+    id: "5",
   },
 ];
 
