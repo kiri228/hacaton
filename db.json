@@ -9,28 +9,20 @@
       "id": 2
     },
     {
-      "title": "1",
-      "price": "3",
-      "image": "https://i.pinimg.com/736x/e1/19/47/e1194718b4d95063e8cea152308f1a8d.jpg",
-      "category": "tank",
-      "description": "asdf",
-      "id": 3
-    },
-    {
-      "title": "asdf",
-      "price": "3452",
-      "image": "https://i.pinimg.com/564x/d5/1c/5e/d51c5ea57b7e498f315010b5bb303e12.jpg",
+      "title": "haha",
+      "price": "918237984",
+      "image": "https://i.pinimg.com/originals/8f/e4/d0/8fe4d0ccf673cb21d0d308baaf4c09f0.png",
       "category": " mage",
-      "description": "adsf",
-      "id": 4
+      "description": "akdsjf;ljk",
+      "id": 5
     },
     {
-      "title": "qerw",
-      "price": "2343",
-      "image": "https://i.pinimg.com/564x/1f/9a/3b/1f9a3b0ab497537e9c96d8176da08dd8.jpg",
-      "category": "marksman",
-      "description": "adfsadf",
-      "id": 5
+      "title": "fgfhgfhg",
+      "price": "697",
+      "image": "https://dota2.ru/img/heroes/crystal_maiden/portrait.jpg",
+      "category": " mage",
+      "description": "jhkjhkj",
+      "id": 6
     }
   ]
 }
