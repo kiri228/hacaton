@@ -1,21 +1,10 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
-import React, { FormEvent, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Box, Button, TextField } from "@mui/material";
 import { useProducts } from "../contexts/hero/HeroContextProvider";
-import { notify } from "../components/Toastify";
-import { useNavigate } from "react-router-dom";
-import { categories } from "../utils/consts";
+import { useNavigate, useParams } from "react-router-dom";
 
-const AddPage = () => {
-  const { addProduct } = useProducts();
-
+const UpdatePage = () => {
+  const { oneProduct, getOneProduct, editProduct } = useProducts();
   const [product, setProduct] = useState({
     title: "",
     price: 0,
@@ -37,6 +26,18 @@ const AddPage = () => {
     textU: "",
   });
 
+  const nav = useNavigate();
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    getOneProduct(id!);
+  }, []);
+
+  useEffect(() => {
+    oneProduct && setProduct(oneProduct);
+  }, [oneProduct]);
+
   const handleChange = (e: any) => {
     setProduct({
       ...product,
@@ -44,34 +45,9 @@ const AddPage = () => {
     });
   };
 
-  const nav = useNavigate();
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (
-      !product.title.trim() ||
-      !product.price ||
-      !product.category.trim() ||
-      !product.description.trim() ||
-      !product.image.trim() ||
-      !product.img.trim() ||
-      !product.skillA.trim() ||
-      !product.imageA.trim() ||
-      !product.textA.trim() ||
-      !product.skillB.trim() ||
-      !product.imageB.trim() ||
-      !product.textB.trim() ||
-      !product.skillC.trim() ||
-      !product.imageC.trim() ||
-      !product.textC.trim() ||
-      !product.ultimate.trim() ||
-      !product.imageU.trim() ||
-      !product.textU.trim()
-    ) {
-      notify("Заполните поля!");
-      return;
-    }
-    addProduct(product);
+    editProduct(id!, product);
     nav("/");
   };
   return (
@@ -84,9 +60,8 @@ const AddPage = () => {
         flexDirection: "column",
         alignItems: "center",
         width: "30%",
-        padding: "10px",
+        padding: "20px 0",
         margin: "auto",
-
         marginTop: "10px",
         backgroundColor: "#fff",
         border: "3px solid #1976D2",
@@ -96,37 +71,7 @@ const AddPage = () => {
       autoComplete="off"
     >
       <TextField
-        onChange={handleChange}
-        id="standard-search"
-        label="Title"
-        type="text"
-        variant="standard"
-        name="title"
-      />
-      <TextField
-        onChange={handleChange}
-        id="standard-search"
-        label="Price"
-        type="number"
-        variant="standard"
-        name="price"
-      />
-      <FormControl fullWidth sx={{ width: "65%" }}>
-        <InputLabel id="demo-simple-select-label">Category</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={product.category}
-          label="Category"
-          onChange={handleChange}
-          name="category"
-        >
-          {categories.map((cat) => (
-            <MenuItem value={cat.value}>{cat.title}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <TextField
+        value={product.description}
         onChange={handleChange}
         id="standard-search"
         label="Description"
@@ -134,24 +79,18 @@ const AddPage = () => {
         variant="standard"
         name="description"
       />
+
       <TextField
+        value={product.img}
         onChange={handleChange}
         id="standard-search"
         label="Image"
         type="url"
         variant="standard"
-        name="image"
-      />
-
-      <TextField
-        onChange={handleChange}
-        id="standard-search"
-        label="Img"
-        type="url"
-        variant="standard"
         name="img"
       />
       <TextField
+        value={product.skillA}
         onChange={handleChange}
         id="standard-search"
         label="SkillA"
@@ -160,6 +99,7 @@ const AddPage = () => {
         name="skillA"
       />
       <TextField
+        value={product.imageA}
         onChange={handleChange}
         id="standard-search"
         label="ImageA"
@@ -168,14 +108,16 @@ const AddPage = () => {
         name="imageA"
       />
       <TextField
+        value={product.textA}
         onChange={handleChange}
         id="standard-search"
-        label="textA"
+        label="TextA"
         type="url"
         variant="standard"
         name="textA"
       />
       <TextField
+        value={product.skillB}
         onChange={handleChange}
         id="standard-search"
         label="SkillB"
@@ -184,6 +126,7 @@ const AddPage = () => {
         name="skillB"
       />
       <TextField
+        value={product.imageB}
         onChange={handleChange}
         id="standard-search"
         label="ImageB"
@@ -192,14 +135,16 @@ const AddPage = () => {
         name="imageB"
       />
       <TextField
+        value={product.textB}
         onChange={handleChange}
         id="standard-search"
-        label="textB"
+        label="TextB"
         type="url"
         variant="standard"
         name="textB"
       />
       <TextField
+        value={product.skillC}
         onChange={handleChange}
         id="standard-search"
         label="SkillC"
@@ -208,6 +153,7 @@ const AddPage = () => {
         name="skillC"
       />
       <TextField
+        value={product.imageC}
         onChange={handleChange}
         id="standard-search"
         label="ImageC"
@@ -216,14 +162,16 @@ const AddPage = () => {
         name="imageC"
       />
       <TextField
+        value={product.textC}
         onChange={handleChange}
         id="standard-search"
-        label="textC"
+        label="TextC"
         type="url"
         variant="standard"
         name="textC"
       />
       <TextField
+        value={product.ultimate}
         onChange={handleChange}
         id="standard-search"
         label="Ultimate"
@@ -232,6 +180,7 @@ const AddPage = () => {
         name="ultimate"
       />
       <TextField
+        value={product.imageU}
         onChange={handleChange}
         id="standard-search"
         label="ImageU"
@@ -240,19 +189,19 @@ const AddPage = () => {
         name="imageU"
       />
       <TextField
+        value={product.textU}
         onChange={handleChange}
         id="standard-search"
-        label="textU"
+        label="TextU"
         type="url"
         variant="standard"
         name="textU"
       />
       <Button type="submit" variant="contained">
-        Add
-
+        Save
       </Button>
     </Box>
   );
 };
 
-export default AddPage;
+export default UpdatePage;

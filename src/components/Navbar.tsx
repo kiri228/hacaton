@@ -71,8 +71,6 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
-  console.log(user);
-
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -98,7 +96,12 @@ function Navbar() {
             DOTA 2
           </Typography> */}
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -135,7 +138,13 @@ function Navbar() {
             </Menu>
           </Box>
 
-          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
+          <AdbIcon
+            sx={{
+              display: { xs: "flex", md: "none" },
+              mr: 1,
+            }}
+          />
+
           <Typography
             variant="h5"
             noWrap
@@ -149,24 +158,26 @@ function Navbar() {
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
-              textDecoration: "none",
             }}
           >
             DOTA 2
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex", textDecoration: "none" },
+            }}
+          >
             {getPages().map((page) => (
               <Link key={page.id} to={page.link}>
                 <Button
                   key={page.id}
                   onClick={handleCloseNavMenu}
                   sx={{
-                    m: 2,
+                my: 2,
                     color: "white",
                     display: "block",
-                    fontFamily: "monospace",
-                    fontSize: "30px",
-                    marginLeft: "100px",
+
                   }}
                 >
                   {page.title}

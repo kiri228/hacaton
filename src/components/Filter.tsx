@@ -20,7 +20,6 @@ const Filter = () => {
 
   useEffect(() => {
     const currentParams = Object.fromEntries([...searchParams]);
-    console.log(category);
 
     if (category === "all") {
       const { _page, q } = currentParams;
@@ -47,7 +46,16 @@ const Filter = () => {
         aria-label="text button group"
       >
         {categories.map((cat) => (
-          <ToggleButton key={cat.id} value={cat.value}>
+          <ToggleButton
+            key={cat.id}
+            value={cat.value}
+            sx={{
+              color: "#fff",
+              fontWeight: "500",
+              border: "2px solid #fff",
+              padding: "10px 20px",
+            }}
+          >
             {cat.title}
           </ToggleButton>
         ))}

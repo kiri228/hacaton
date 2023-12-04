@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -7,9 +8,7 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
 import { categories } from "../utils/consts";
-import { notify } from "../components/Toastify";
 import { useProducts } from "../contexts/hero/HeroContextProvider";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -19,8 +18,21 @@ const EditPage = () => {
     title: "",
     price: 0,
     image: "",
+    img: "",
     category: "",
     description: "",
+    skillA: "",
+    imageA: "",
+    textA: "",
+    skillB: "",
+    imageB: "",
+    textB: "",
+    skillC: "",
+    imageC: "",
+    textC: "",
+    ultimate: "",
+    imageU: "",
+    textU: "",
   });
 
   const nav = useNavigate();
@@ -40,7 +52,6 @@ const EditPage = () => {
       ...product,
       [e.target.name]: e.target.value,
     });
-    console.log(product);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,17 +64,17 @@ const EditPage = () => {
       onSubmit={handleSubmit}
       component="form"
       sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
+        "& .MuiTextField-root": { m: 1, width: "30ch" },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "20%",
+        width: "30%",
+        padding: "10px",
         margin: "auto",
-        marginTop: "100px",
-        border: "2px solid #1976D2",
-        borderRadius: "15px",
-        gap: "5px",
-        padding: "20px",
+        marginTop: "10px",
+        backgroundColor: "#fff",
+        border: "3px solid #1976D2",
+        borderRadius: "30px",
       }}
       noValidate
       autoComplete="off"
@@ -86,7 +97,7 @@ const EditPage = () => {
         variant="standard"
         name="price"
       />
-      <FormControl fullWidth>
+      <FormControl fullWidth sx={{ width: "65%" }}>
         <InputLabel id="demo-simple-select-label">Category</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -101,15 +112,7 @@ const EditPage = () => {
           ))}
         </Select>
       </FormControl>
-      <TextField
-        value={product.description}
-        onChange={handleChange}
-        id="standard-search"
-        label="Description"
-        type="text"
-        variant="standard"
-        name="description"
-      />
+
       <TextField
         value={product.image}
         onChange={handleChange}
@@ -119,8 +122,9 @@ const EditPage = () => {
         variant="standard"
         name="image"
       />
+
       <Button type="submit" variant="contained">
-        Save changes
+        Save
       </Button>
     </Box>
   );

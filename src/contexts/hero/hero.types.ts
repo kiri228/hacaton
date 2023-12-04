@@ -6,7 +6,20 @@ export interface IProduct {
   description: string;
   category: string;
   image: string;
+  img: string;
   id?: string;
+  skillA: string;
+  imageA: string;
+  textA: string;
+  skillB: string;
+  imageB: string;
+  textB: string;
+  skillC: string;
+  imageC: string;
+  textC: string;
+  ultimate: string;
+  imageU: string;
+  textU: string;
 }
 
 export interface IProductsValues {
