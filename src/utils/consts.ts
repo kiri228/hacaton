@@ -9,18 +9,20 @@ export const categories = [
     id: "1",
   },
   {
-    title: "Tank",
-    value: "tank",
+
+    title: "STRENGTH",
+    value: "strength",
     id: "2",
   },
   {
-    title: "Marksman",
-    value: "marksman",
+    title: "INTELLIGENCE",
+    value: "intelligence",
     id: "3",
   },
   {
-    title: " Assassin",
-    value: " assassin",
+    title: "AGILITY",
+    value: "agility",
+
     id: "4",
   },
   {

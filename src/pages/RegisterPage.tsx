@@ -29,17 +29,17 @@ export default function RegisterPage() {
       onSubmit={handleSubmit}
       component="form"
       sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
+        "& .MuiTextField-root": { m: 1, width: "30ch" },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "20%",
+        width: "25%",
+        padding: "40px 20px",
         margin: "auto",
-        marginTop: "100px",
-        border: "2px solid #1976D2",
-        borderRadius: "15px",
-        gap: "5px",
-        padding: "20px",
+        marginTop: "150px",
+        backgroundColor: "#fff",
+        border: "3px solid #1976D2",
+        borderRadius: "20px",
       }}
       noValidate
       autoComplete="off"
