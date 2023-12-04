@@ -22,17 +22,21 @@ export default function PaginationOutlined() {
   }, [page]);
   return (
     <Box
-      sx={{ width: "fit-content", margin: "30px auto", marginBottom: "200px" }}
+      sx={{
+        width: "fit-content",
+        margin: "30px auto",
+        marginBottom: "200px",
+      }}
       display="flex"
       flexDirection="column"
       alignItems="center"
-      mt={2}
+      m={2}
     >
       <Pagination
         page={+page}
         onChange={(e, val) => setPage(val)}
         count={pageTotalCount}
-        variant="outlined"
+        color="primary"
       />
     </Box>
   );

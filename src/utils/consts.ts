@@ -9,18 +9,18 @@ export const categories = [
     id: "1",
   },
   {
-    title: "Pets",
-    value: "pets",
+    title: "STRENGTH",
+    value: "strength",
     id: "2",
   },
   {
-    title: "Tech",
-    value: "tech",
+    title: "INTELLIGENCE",
+    value: "intelligence",
     id: "3",
   },
   {
-    title: "Gum",
-    value: "gum",
+    title: "AGILITY",
+    value: "agility",
     id: "4",
   },
 ];
