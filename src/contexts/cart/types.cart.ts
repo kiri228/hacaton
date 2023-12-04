@@ -10,6 +10,8 @@ export interface ICartState {
   totalPrice: number;
 }
 
+console.log("ghgh");
+
 export interface ICartValues {
   cart: ICartState;
   getCart: () => void;
