@@ -86,6 +86,7 @@ const AddPage = () => {
         width: "30%",
         padding: "10px",
         margin: "auto",
+
         marginTop: "10px",
         backgroundColor: "#fff",
         border: "3px solid #1976D2",
@@ -141,6 +142,7 @@ const AddPage = () => {
         variant="standard"
         name="image"
       />
+
       <TextField
         onChange={handleChange}
         id="standard-search"
@@ -247,6 +249,7 @@ const AddPage = () => {
       />
       <Button type="submit" variant="contained">
         Add
+
       </Button>
     </Box>
   );

@@ -67,6 +67,7 @@ const HeroList = () => {
     >
       {products.length > 0 ? (
         products.map((card) => (
+
           <Card
             key={card.id}
             sx={{
@@ -77,6 +78,7 @@ const HeroList = () => {
             }}
           >
             {" "}
+
             <Typography
               sx={{
                 margin: "10px",
@@ -84,7 +86,9 @@ const HeroList = () => {
                 textTransform: "uppercase",
                 fontFamily: "Reaver, serif",
                 fontWeight: "700",
+
                 color: "#fff",
+
               }}
               gutterBottom
               variant="h5"
@@ -92,7 +96,7 @@ const HeroList = () => {
             >
               {card.title}
             </Typography>
-            <Link to={`/hero/${card.id}`}>
+           <Link to={`/hero/${card.id}`}>
               <CardMedia
                 component="img"
                 sx={{ height: 220 }}
@@ -101,6 +105,7 @@ const HeroList = () => {
                 alt={card.title}
               />
             </Link>
+
             <CardActions disableSpacing>
               <IconButton>
                 <div>
