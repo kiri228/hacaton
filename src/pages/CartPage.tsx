@@ -32,8 +32,24 @@ const CartPage = () => {
           textAlign: "center",
         }}
       >
-        <Typography variant="h4">Cart is empty</Typography>
-        <Button component={Link} to="/">
+        <Typography
+          variant="h4"
+          sx={{
+            color: "#fff",
+            fontWeight: "700",
+          }}
+        >
+          Cart is empty
+        </Typography>
+        <Button
+          component={Link}
+          to="/"
+          sx={{
+            fontSize: "20px",
+            fontWeight: "700",
+            color: "#27D15A",
+          }}
+        >
           Go to products
         </Button>
       </Box>
@@ -56,17 +72,29 @@ const CartPage = () => {
           {cart.products.map((row) => (
             <TableRow
               key={row.id}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              sx={{
+                "&:last-child td, &:last-child th": { border: 0 },
+              }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell
+                component="th"
+                scope="row"
+                sx={{ fontFamily: "Georgia, serif" }}
+              >
                 {row.title}
               </TableCell>
               <TableCell align="right">
                 <img width={70} src={row.image} />
               </TableCell>
-              <TableCell align="right">{row.category}</TableCell>
-              <TableCell align="right">{row.price}</TableCell>
-              <TableCell align="right">{row.subPrice}</TableCell>
+              <TableCell align="right" sx={{ fontFamily: "Georgia, serif" }}>
+                {row.category}
+              </TableCell>
+              <TableCell align="right" sx={{ fontFamily: "Georgia, serif" }}>
+                {row.price}
+              </TableCell>
+              <TableCell align="right" sx={{ fontFamily: "Georgia, serif" }}>
+                {row.subPrice}
+              </TableCell>
               <TableCell>
                 <IconButton
                   onClick={() => {
@@ -91,7 +119,9 @@ const CartPage = () => {
         </TableBody>
       </Table>
       <Box>
-        <Typography variant="h4">Total price: {cart.totalPrice}$</Typography>
+        <Typography variant="h4" sx={{ fontFamily: "Georgia, serif" }}>
+          Total price: {cart.totalPrice}$
+        </Typography>
         <Button variant="contained" component={Link} to="/success">
           Order
         </Button>

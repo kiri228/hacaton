@@ -9,7 +9,6 @@ export const categories = [
     id: "1",
   },
   {
-
     title: "STRENGTH",
     value: "strength",
     id: "2",
@@ -24,11 +23,6 @@ export const categories = [
     value: "agility",
 
     id: "4",
-  },
-  {
-    title: " Mage",
-    value: " mage",
-    id: "5",
   },
 ];
 

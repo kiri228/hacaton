@@ -36,7 +36,7 @@ export function useProducts() {
 
 const ProductsContextProvider = ({ children }: IAuth) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [page, setPage] = useState(searchParams.get("_page") || 1);
 
   async function getProducts() {

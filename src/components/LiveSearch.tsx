@@ -38,7 +38,7 @@ const Livesearch = () => {
     <ThemeProvider theme={searchTheme}>
       <div
         style={{
-          border: "2px solid rgba(255, 255, 255, 0.5)",
+          border: "2px solid #ffffff80",
           borderRadius: "8px",
         }}
       >
@@ -51,7 +51,7 @@ const Livesearch = () => {
           onChange={(e) => setSearchVal(e.target.value)}
           placeholder="Search..."
           sx={{
-            border: "2px solid rgba(255, 255, 255, 0.5)",
+            border: "2px solid #ffffff80",
             borderRadius: "5px",
           }}
           id="outlined-basic"

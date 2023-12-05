@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-// import AdbIcon from "@mui/icons-material/Adb";
+import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/auth/AuthContextsProvider";
 import LiveSearch from "./LiveSearch";
@@ -75,27 +75,9 @@ function Navbar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_horiz.png" />
-          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 300,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-              fontSize: "40px",
-            }}
-          >
-            DOTA 2
-          </Typography> */}
-
+          <Link to="/?_page=1&_limit=3">
+            <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_horiz.png" />
+          </Link>
           <Box
             sx={{
               flexGrow: 1,
@@ -137,31 +119,12 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-
           <AdbIcon
             sx={{
               display: { xs: "flex", md: "none" },
               mr: 1,
             }}
           />
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-            }}
-          >
-            DOTA 2
-          </Typography>
           <Box
             sx={{
               flexGrow: 1,
@@ -174,10 +137,9 @@ function Navbar() {
                   key={page.id}
                   onClick={handleCloseNavMenu}
                   sx={{
-                my: 2,
+                    my: 2,
                     color: "white",
                     display: "block",
-
                   }}
                 >
                   {page.title}
@@ -185,7 +147,6 @@ function Navbar() {
               </Link>
             ))}
           </Box>
-
           {user && (
             <Link to="/cart">
               <LocalMallIcon
@@ -196,20 +157,19 @@ function Navbar() {
               />
             </Link>
           )}
-
           <LiveSearch />
-
           <Box sx={{ flexGrow: 0 }}>
-            <span style={{ marginRight: "2rem" }}>{`${
+            <span style={{ margin: "10px" }}>{`${
               user ? user.displayName : "No user"
             }`}</span>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 3 }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                 <Avatar
                   alt="Remy Sharp"
                   src={`${
                     user ? user.photoURL : "/static/images/avatar/2.jpg"
                   }`}
+                  sx={{ width: 70, height: 70 }}
                 />
               </IconButton>
             </Tooltip>
