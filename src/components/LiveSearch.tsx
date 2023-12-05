@@ -11,7 +11,7 @@ const searchTheme = createTheme({
       styleOverrides: {
         root: {
           "& input": {
-            color: "white",
+            color: "#fff",
           },
         },
       },
@@ -36,28 +36,28 @@ const Livesearch = () => {
   }, [searchVal]);
   return (
     <ThemeProvider theme={searchTheme}>
-      <div
-        style={{
-          border: "2px solid #ffffff80",
+      <TextField
+        InputProps={{
+          startAdornment: (
+            <SearchIcon
+              sx={{
+                color: "#fff",
+                marginLeft: "20px",
+                margin: "0 10px 0 0",
+                fontSize: "30px",
+              }}
+            />
+          ),
+        }}
+        onChange={(e) => setSearchVal(e.target.value)}
+        placeholder="Search..."
+        sx={{
+          border: "2px solid #fff",
           borderRadius: "8px",
         }}
-      >
-        <TextField
-          InputProps={{
-            startAdornment: (
-              <SearchIcon sx={{ color: "white", marginLeft: "10px" }} />
-            ),
-          }}
-          onChange={(e) => setSearchVal(e.target.value)}
-          placeholder="Search..."
-          sx={{
-            border: "2px solid #ffffff80",
-            borderRadius: "5px",
-          }}
-          id="outlined-basic"
-          variant="outlined"
-        />
-      </div>
+        id="outlined-basic"
+        variant="outlined"
+      />
     </ThemeProvider>
   );
 };

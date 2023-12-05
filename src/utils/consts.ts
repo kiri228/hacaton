@@ -4,7 +4,7 @@ export const API = "http://localhost:8000/hero";
 
 export const categories = [
   {
-    title: "All",
+    title: "ALL",
     value: "all",
     id: "1",
   },

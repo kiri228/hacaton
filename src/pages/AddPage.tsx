@@ -89,7 +89,6 @@ const AddPage = () => {
           width: "30%",
           padding: "10px",
           margin: "auto",
-
           marginTop: "10px",
           backgroundColor: "#fff",
           border: "3px solid #1976D2",
@@ -125,7 +124,9 @@ const AddPage = () => {
             name="category"
           >
             {categories.map((cat) => (
-              <MenuItem value={cat.value}>{cat.title}</MenuItem>
+              <MenuItem value={cat.value} sx={{ color: "#000" }}>
+                {cat.title}
+              </MenuItem>
             ))}
           </Select>
         </FormControl>

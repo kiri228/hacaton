@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { useCartContext } from "../contexts/cart/CartContextProvider";
 import { useNavigate } from "react-router-dom";
+import BackVideo from "../components/back/BackVideo";
 
 const SuccessPage = () => {
   const { clearCart } = useCartContext();
@@ -14,6 +15,7 @@ const SuccessPage = () => {
   }, []);
   return (
     <>
+      <BackVideo />
       <Box
         sx={{
           display: "flex",

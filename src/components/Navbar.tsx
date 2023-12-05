@@ -72,7 +72,10 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "transparent", border: "none" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to="/?_page=1&_limit=3">
@@ -140,6 +143,11 @@ function Navbar() {
                     my: 2,
                     color: "white",
                     display: "block",
+                    fontSize: "30px",
+                    fontFamily: "serif",
+                    padding: "3px 0",
+                    margin: "0 8px",
+                    marginLeft: "95px",
                   }}
                 >
                   {page.title}
@@ -151,7 +159,7 @@ function Navbar() {
             <Link to="/cart">
               <LocalMallIcon
                 sx={{
-                  marginRight: "30px",
+                  marginRight: "18px",
                   color: "white",
                 }}
               />
@@ -159,9 +167,14 @@ function Navbar() {
           )}
           <LiveSearch />
           <Box sx={{ flexGrow: 0 }}>
-            <span style={{ margin: "10px" }}>{`${
-              user ? user.displayName : "No user"
-            }`}</span>
+            <span
+              style={{
+                marginRight: "2rem",
+                margin: "0 35px 0 25px",
+                fontFamily: "serif",
+                fontSize: "20px",
+              }}
+            >{`${user ? user.displayName : "No user"}`}</span>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                 <Avatar
