@@ -122,7 +122,9 @@ const AddPage = () => {
           name="category"
         >
           {categories.map((cat) => (
-            <MenuItem value={cat.value}>{cat.title}</MenuItem>
+            <MenuItem value={cat.value} sx={{ color: "black" }}>
+              {cat.title}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>
@@ -249,7 +251,6 @@ const AddPage = () => {
       />
       <Button type="submit" variant="contained">
         Add
-
       </Button>
     </Box>
   );
