@@ -13,16 +13,18 @@ const SuccessPage = () => {
     }, 2000);
   }, []);
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
-      <Typography variant="h2">Thank you for your order!</Typography>
-    </Box>
+    <>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <Typography variant="h2">Thank you for your order!</Typography>
+      </Box>
+    </>
   );
 };
 

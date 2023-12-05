@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import { useAuth } from "../contexts/auth/AuthContextsProvider";
+import BackVideo from "../components/back/BackVideo";
 
 const HeroPage = () => {
   const { getOneProduct, oneProduct } = useProducts();
@@ -25,6 +26,7 @@ const HeroPage = () => {
 
   return (
     <>
+      <BackVideo />
       <Card
         key={oneProduct?.id}
         sx={{

@@ -1,7 +1,6 @@
 {
   "hero": [
     {
-
       "title": "MIRANA",
       "price": "0",
       "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
@@ -23,9 +22,9 @@
       "id": 1
     },
     {
-      "title": "DARK SEER",
+      "title": "PUCK",
       "price": "0",
-      "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dark_seer.png",
+      "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/puck.png",
       "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/dark_seer.png",
       "category": "intelligence",
       "description": "Versatile and strategic, Dark Seer excels at manipulating the positions of his enemies. Vacuuming foes into the attacks of his allies, he can turn enemy strength against itself by pulling foes through his replicating wall.",
@@ -44,7 +43,6 @@
       "id": 2
     },
     {
-
       "title": "DAWNBREAKER",
       "price": "0",
       "image": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dawnbreaker.png",
@@ -105,9 +103,7 @@
       "ultimate": "Shadow Dance",
       "imageU": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/slark_shadow_dance.png",
       "textU": "When used, Slark hides himself in a cloud of shadows, becoming immune to detection. Attacking, casting spells, and using items will not reveal Slark.  Passively, when not visible to the enemy team, Slark gains bonus movement speed and health regeneration.",
-
       "id": 5
-
     }
   ]
 }

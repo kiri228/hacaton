@@ -22,13 +22,13 @@ const Filter = () => {
     const currentParams = Object.fromEntries([...searchParams]);
 
     if (category === "all") {
-      const { _page, q } = currentParams;
+      const { _page, x } = currentParams;
 
       searchParams.delete("category");
       setSearchParams({
         _limit: LIMIT.toString(),
         _page: (_page || 1).toString(),
-        q: q || "",
+        x: x || "",
       });
     } else {
       setSearchParams({
