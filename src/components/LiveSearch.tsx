@@ -39,20 +39,27 @@ const Livesearch = () => {
       <div
         style={{
           border: "2px solid rgba(255, 255, 255, 0.5)",
-          borderRadius: "8px",
+          borderRadius: "10px",
         }}
       >
         <TextField
           InputProps={{
             startAdornment: (
-              <SearchIcon sx={{ color: "white", marginLeft: "10px" }} />
+              <SearchIcon
+                sx={{
+                  color: "white",
+                  marginLeft: "20px",
+                  margin: "0 10px 0 0px",
+                  fontSize: "30px",
+                }}
+              />
             ),
           }}
           onChange={(e) => setSearchVal(e.target.value)}
           placeholder="Search..."
           sx={{
             border: "2px solid rgba(255, 255, 255, 0.5)",
-            borderRadius: "5px",
+            borderRadius: "8px",
           }}
           id="outlined-basic"
           variant="outlined"

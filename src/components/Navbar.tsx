@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-// import AdbIcon from "@mui/icons-material/Adb";
+import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/auth/AuthContextsProvider";
 import LiveSearch from "./LiveSearch";
@@ -72,7 +72,10 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "transparent", border: "none" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_horiz.png" />
@@ -174,10 +177,14 @@ function Navbar() {
                   key={page.id}
                   onClick={handleCloseNavMenu}
                   sx={{
-                my: 2,
+                    my: 2,
                     color: "white",
                     display: "block",
-
+                    fontSize: "30px",
+                    fontFamily: "serif",
+                    padding: "3px 0px",
+                    margin: "0px 8px",
+                    marginLeft: "95px",
                   }}
                 >
                   {page.title}
@@ -190,7 +197,7 @@ function Navbar() {
             <Link to="/cart">
               <LocalMallIcon
                 sx={{
-                  marginRight: "30px",
+                  marginRight: "18px",
                   color: "white",
                 }}
               />
@@ -200,9 +207,14 @@ function Navbar() {
           <LiveSearch />
 
           <Box sx={{ flexGrow: 0 }}>
-            <span style={{ marginRight: "2rem" }}>{`${
-              user ? user.displayName : "No user"
-            }`}</span>
+            <span
+              style={{
+                marginRight: "2rem",
+                margin: "0 35px 0 25px",
+                fontFamily: "serif",
+                fontSize: "20px",
+              }}
+            >{`${user ? user.displayName : "No user"}`}</span>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 3 }}>
                 <Avatar

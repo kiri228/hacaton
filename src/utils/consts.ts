@@ -4,12 +4,11 @@ export const API = "http://localhost:8000/hero";
 
 export const categories = [
   {
-    title: "All",
+    title: "ALL",
     value: "all",
     id: "1",
   },
   {
-
     title: "STRENGTH",
     value: "strength",
     id: "2",
@@ -26,7 +25,7 @@ export const categories = [
     id: "4",
   },
   {
-    title: " Mage",
+    title: " MAGE",
     value: " mage",
     id: "5",
   },
