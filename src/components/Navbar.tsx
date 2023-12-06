@@ -5,17 +5,17 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/auth/AuthContextsProvider";
 import LiveSearch from "./LiveSearch";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
+import style from "./item.module.css";
 
 const pages = [{ title: "Products", link: "/", id: 1 }];
 
@@ -72,205 +72,128 @@ function Navbar() {
   };
 
   return (
-    <AppBar
-      position="static"
-      sx={{ backgroundColor: "transparent", border: "none" }}
-    >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_horiz.png" />
-          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 300,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-              fontSize: "40px",
-            }}
-          >
-            DOTA 2
-          </Typography> */}
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none" },
-            }}
-          >
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.title}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-
-          <AdbIcon
-            sx={{
-              display: { xs: "flex", md: "none" },
-              mr: 1,
-            }}
-          />
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-            }}
-          >
-            DOTA 2
-          </Typography>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex", textDecoration: "none" },
-            }}
-          >
-            {getPages().map((page) => (
-              <Link key={page.id} to={page.link}>
-                <Button
-                  key={page.id}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                    fontSize: "30px",
-                    fontFamily: "serif",
-                    padding: "3px 0px",
-                    margin: "0px 8px",
-                    marginLeft: "95px",
-                  }}
-                >
-                  {page.title}
-                </Button>
-              </Link>
-            ))}
-          </Box>
-
-          {user && (
-            <Link to="/cart">
-              <LocalMallIcon
-                sx={{
-                  marginRight: "18px",
-                  color: "white",
-                }}
+    <>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "transparent", border: "none" }}
+      >
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Link to="/?_page=1&_limit=3">
+              <img
+                src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/global/dota2_logo_horiz.png"
+                className={style.logo}
               />
             </Link>
-          )}
+            <Box
 
-          <LiveSearch />
-
-          <Box sx={{ flexGrow: 0 }}>
-            <span
-              style={{
-                marginRight: "2rem",
-                margin: "0 35px 0 25px",
-                fontFamily: "serif",
-                fontSize: "20px",
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex", textDecoration: "none" },
               }}
-            >{`${user ? user.displayName : "No user"}`}</span>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 3 }}>
-                <Avatar
-                  alt="Remy Sharp"
-                  src={`${
-                    user ? user.photoURL : "/static/images/avatar/2.jpg"
-                  }`}
-                />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ m: "40px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <div key={setting.id}>
-                  {!setting.link ? (
-                    <MenuItem
-                      key={setting.id}
-                      onClick={() => {
-                        handleCloseUserMenu();
-                        logout();
-                      }}
-                    >
-                      <Typography textAlign="center">
-                        {setting.title}
-                      </Typography>
-                    </MenuItem>
-                  ) : (
-                    <Link to={setting.link}>
-                      <MenuItem key={setting.id} onClick={handleCloseUserMenu}>
+              {getPages().map((page) => (
+                <Link key={page.id} to={page.link}>
+                  <Button
+                    key={page.id}
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      my: 2,
+                      display: "block",
+                      fontSize: "20px",
+                      fontFamily: "serif",
+                      color: "#fff",
+                    }}
+                  >
+                    {page.title}
+                  </Button>
+                </Link>
+              ))}
+            </Box>
+            {user && (
+              <Link to="/cart">
+                <LocalMallIcon
+                  sx={{
+                    marginRight: "10px",
+                    color: "#fff",
+                    fontSize: "30px",
+
+                  }}
+                />
+              </Link>
+            )}
+            <LiveSearch />
+            <Box sx={{ flexGrow: 0 }}>
+              <span
+                style={{
+                  marginRight: "2rem",
+                  margin: "0 20px",
+                  fontFamily: "serif",
+                  fontSize: "20px",
+                }}
+              >{`${user ? user.displayName : "No user"}`}</span>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={`${
+                      user ? user.photoURL : "/static/images/avatar/2.jpg"
+                    }`}
+                    sx={{ width: 70, height: 70 }}
+                  />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ margin: "70px 0 0 0" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => (
+                  <div key={setting.id}>
+                    {!setting.link ? (
+                      <MenuItem
+                        key={setting.id}
+                        onClick={() => {
+                          handleCloseUserMenu();
+                          logout();
+                        }}
+                      >
+
                         <Typography textAlign="center">
                           {setting.title}
                         </Typography>
                       </MenuItem>
-                    </Link>
-                  )}
-                </div>
-              ))}
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+                    ) : (
+                      <Link to={setting.link}>
+                        <MenuItem
+                          key={setting.id}
+                          onClick={handleCloseUserMenu}
+                        >
+                          <Typography textAlign="center">
+                            {setting.title}
+                          </Typography>
+                        </MenuItem>
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </Menu>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </>
   );
 }
 export default Navbar;

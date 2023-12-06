@@ -21,14 +21,9 @@ export const categories = [
   {
     title: "AGILITY",
     value: "agility",
-
     id: "4",
   },
-  {
-    title: " MAGE",
-    value: " mage",
-    id: "5",
-  },
+
 ];
 
 export const LIMIT = 3;
