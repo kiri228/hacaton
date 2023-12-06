@@ -21,9 +21,9 @@ export const categories = [
   {
     title: "AGILITY",
     value: "agility",
-
     id: "4",
   },
+
 ];
 
 export const LIMIT = 3;

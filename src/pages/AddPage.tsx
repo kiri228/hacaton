@@ -99,6 +99,7 @@ const AddPage = () => {
       >
         <TextField
           onChange={handleChange}
+
           id="standard-search"
           label="Title"
           type="text"
@@ -256,6 +257,7 @@ const AddPage = () => {
         </Button>
       </Box>
     </>
+
   );
 };
 

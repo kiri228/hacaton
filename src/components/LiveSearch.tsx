@@ -35,6 +35,7 @@ const Livesearch = () => {
   }, [searchVal]);
   return (
     <ThemeProvider theme={searchTheme}>
+
       <TextField
         InputProps={{
           startAdornment: (
@@ -56,6 +57,7 @@ const Livesearch = () => {
         id="outlined-basic"
         variant="outlined"
       />
+
     </ThemeProvider>
   );
 };

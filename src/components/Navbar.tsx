@@ -10,6 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/auth/AuthContextsProvider";
 import LiveSearch from "./LiveSearch";
@@ -85,6 +86,7 @@ function Navbar() {
               />
             </Link>
             <Box
+
               sx={{
                 flexGrow: 1,
                 display: { xs: "none", md: "flex", textDecoration: "none" },
@@ -115,6 +117,7 @@ function Navbar() {
                     marginRight: "10px",
                     color: "#fff",
                     fontSize: "30px",
+
                   }}
                 />
               </Link>
@@ -166,6 +169,7 @@ function Navbar() {
                           logout();
                         }}
                       >
+
                         <Typography textAlign="center">
                           {setting.title}
                         </Typography>
