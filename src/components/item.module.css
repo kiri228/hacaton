@@ -1,0 +1,11 @@
+.logo {
+  width: 200px;
+  padding: 0 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  gap: 60px;
+}

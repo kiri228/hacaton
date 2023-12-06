@@ -42,7 +42,7 @@ const CartContextProvideer = ({ children }: IAuth) => {
     const data = getDataFromLS();
     data.products.push({ ...product, count: 1, subPrice: product.price });
     data.totalPrice = data.products.reduce(
-      (acc, item) => acc + +item.subPrice ?? 0,
+      (acc, item) => acc + +item.price ?? 0,
       0
     );
     localStorage.setItem("cart", JSON.stringify(data));
@@ -54,7 +54,7 @@ const CartContextProvideer = ({ children }: IAuth) => {
     const data = getDataFromLS();
     data.products = data.products.filter((item) => +item.id! !== id);
     data.totalPrice = data.products.reduce(
-      (acc, item) => acc + +item.subPrice ?? 0,
+      (acc, item) => acc + +item.price ?? 0,
       0
     );
     localStorage.setItem("cart", JSON.stringify(data));
@@ -73,15 +73,12 @@ const CartContextProvideer = ({ children }: IAuth) => {
     data.products = data.products.map((item) => {
       if (+item.id! === id) {
         item.count = item.count + 1;
-        item.subPrice = +item.subPrice + +item.price;
+        // item.subPrice = +item.subPrice + +item.price;
       }
       return item;
     });
 
-    data.totalPrice = data.products.reduce(
-      (acc, item) => acc + item.subPrice,
-      0
-    );
+    data.totalPrice = data.products.reduce((acc, item) => acc + item.price, 0);
     localStorage.setItem("cart", JSON.stringify(data));
     getCart();
   }
@@ -91,15 +88,12 @@ const CartContextProvideer = ({ children }: IAuth) => {
     data.products = data.products.map((item) => {
       if (+item.id! === id) {
         item.count = item.count - 1;
-        item.subPrice = +item.subPrice - +item.price;
+        // item.subPrice = +item.subPrice - +item.price;
       }
       return item;
     });
 
-    data.totalPrice = data.products.reduce(
-      (acc, item) => acc + item.subPrice,
-      0
-    );
+    data.totalPrice = data.products.reduce((acc, item) => acc + item.price, 0);
     localStorage.setItem("cart", JSON.stringify(data));
     getCart();
   }

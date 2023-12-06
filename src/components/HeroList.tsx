@@ -103,20 +103,7 @@ const HeroList = () => {
                 />
               </Link>
               <CardActions disableSpacing>
-                <IconButton>
-                  <div>
-                    {isAlreadyInCart(+card.id!) ? (
-                      <div onClick={() => deleteProductFromCart(+card.id!)}>
-                        <FavoriteIcon color="error" />
-                      </div>
-                    ) : (
-                      <div onClick={() => addProductToCart(card)}>
-                        <FavoriteIcon />
-                      </div>
-                    )}
-                  </div>
-                </IconButton>
-                <IconButton aria-label="share">
+                <IconButton aria-label="share" sx={{ color: "#fff" }}>
                   {user && (
                     <div>
                       {isAlreadyInCart(+card.id!) ? (
@@ -167,7 +154,7 @@ const HeroList = () => {
                   >
                     Price: {card.price}
                     <Avatar
-                      alt="skillB"
+                      alt="$"
                       src="https://i.kym-cdn.com/photos/images/newsfeed/001/293/154/305.png"
                       sx={{ width: 30, height: 30 }}
                     />

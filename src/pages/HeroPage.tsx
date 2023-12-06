@@ -1,6 +1,5 @@
 import { CardActionArea } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { styled } from "@mui/material/styles";
 import { useProducts } from "../contexts/hero/HeroContextProvider";
 import {
   Avatar,
@@ -60,7 +59,6 @@ const HeroPage = () => {
           >
             <CardMedia
               component="img"
-              sx={{ height: 410 }}
               image={oneProduct?.img}
               title={oneProduct?.title}
               alt="img"

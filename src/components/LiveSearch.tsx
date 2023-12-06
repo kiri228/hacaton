@@ -1,9 +1,8 @@
-import { TextField, ThemeProvider, createTheme } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { TextField, ThemeProvider, createTheme } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../contexts/hero/HeroContextProvider";
-import { setEmitFlags } from "typescript";
 
 const searchTheme = createTheme({
   components: {
@@ -21,7 +20,7 @@ const searchTheme = createTheme({
 
 const Livesearch = () => {
   const [searchParams, setsearchParams] = useSearchParams();
-  const [searchVal, setSearchVal] = useState(searchParams.get("q") || "");
+  const [searchVal, setSearchVal] = useState(searchParams.get("x") || "");
 
   const { getProducts, setPage } = useProducts();
 
@@ -29,7 +28,7 @@ const Livesearch = () => {
     const currentParams = Object.fromEntries([...searchParams]);
     setsearchParams({
       ...currentParams,
-      q: searchVal,
+      x: searchVal,
     });
     getProducts();
     setPage(1);
@@ -42,7 +41,6 @@ const Livesearch = () => {
             <SearchIcon
               sx={{
                 color: "#fff",
-                marginLeft: "20px",
                 margin: "0 10px 0 0",
                 fontSize: "30px",
               }}
@@ -53,7 +51,7 @@ const Livesearch = () => {
         placeholder="Search..."
         sx={{
           border: "2px solid #fff",
-          borderRadius: "8px",
+          borderRadius: "10px",
         }}
         id="outlined-basic"
         variant="outlined"

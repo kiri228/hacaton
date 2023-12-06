@@ -22,6 +22,9 @@ const SuccessPage = () => {
           justifyContent: "center",
           alignItems: "center",
           height: "100vh",
+          fontFamily: "Georgia, serif;",
+          fontWeight: "700",
+          color: "#fff",
         }}
       >
         <Typography variant="h2">Thank you for your order!</Typography>

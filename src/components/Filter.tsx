@@ -1,10 +1,4 @@
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  ToggleButton,
-  ToggleButtonGroup,
-} from "@mui/material";
+import { Box, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { LIMIT, categories } from "../utils/consts";
 import { useSearchParams } from "react-router-dom";

@@ -25,7 +25,6 @@ export default function PaginationOutlined() {
       sx={{
         width: "fit-content",
         margin: "30px auto",
-        marginBottom: "200px",
       }}
       display="flex"
       flexDirection="column"
